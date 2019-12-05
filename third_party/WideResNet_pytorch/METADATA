@@ -1,0 +1,12 @@
+name: "WideResNet-pytorch"
+description: "PyTorch implementation of WideResNet."
+
+third_party {
+  url {
+    type: GIT
+    value: "https://github.com/xternalz/WideResNet-pytorch"
+  }
+  version: "1171f93d5a9ae28eb5e603e5e7545f488d0df6ab"
+  last_upgrade_date { year: 2019 month: 12 day: 4 }
+  license_type: PERMISSIVE
+}
