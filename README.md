@@ -102,7 +102,7 @@ If you find this useful for your work, please consider citing
 @article{hendrycks2020augmix,
   title={{AugMix}: A Simple Data Processing Method to Improve Robustness and Uncertainty},
   author={Hendrycks, Dan and Mu, Norman and Cubuk, Ekin D. and Zoph, Barret and Gilmer, Justin and Lakshminarayanan, Balaji},
-  journal={arXiv preprint arXiv:1907.07174},
+  journal={arXiv preprint arXiv:1912.02781},
   year={2020}
 }
 ```
