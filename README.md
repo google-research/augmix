@@ -4,15 +4,19 @@
 
 ## Introduction
 
-We propose AugMix, a data processing technique that is mixes augmented images,
-makes the augmented images consistently embedded, and results in increased
-robustness and improved calibration. AugMix does not require tuning to work
-correctly, so, like random cropping or CutOut, AugMix enables plug-and-play data
-augmentation. AugMix significantly improves robustness and uncertainty measures
-on challenging image classification benchmarks, closing the gap between previous
-methods and the best possible performance in some cases by more than half. With
-AugMix, we obtain state-of-the-art on ImageNet-C, ImageNet-P and in uncertainty
-estimation when the train and test distribution do not match.
+We propose AugMix, a data processing technique that mixes augmented images and
+enforces consistent embeddings of the augmented images, which results in
+increased robustness and improved uncertainty calibration. AugMix does not
+require tuning to work correctly, as with random cropping or CutOut, and thus
+enables plug-and-play data augmentation. AugMix significantly improves
+robustness and uncertainty measures on challenging image classification
+benchmarks, closing the gap between previous methods and the best possible
+performance by more than half in some cases. With AugMix, we obtain
+state-of-the-art on ImageNet-C, ImageNet-P and in uncertainty estimation when
+the train and test distribution do not match.
+
+For more details please see our
+[full paper](https://arxiv.org/pdf/1912.02781.pdf).
 
 ## Pseudocode
 
@@ -98,7 +102,7 @@ If you find this useful for your work, please consider citing
 @article{hendrycks2020augmix,
   title={{AugMix}: A Simple Data Processing Method to Improve Robustness and Uncertainty},
   author={Hendrycks, Dan and Mu, Norman and Cubuk, Ekin D. and Zoph, Barret and Gilmer, Justin and Lakshminarayanan, Balaji},
-  journal={arXiv},
+  journal={arXiv preprint arXiv:1907.07174},
   year={2020}
 }
 ```
