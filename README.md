@@ -15,8 +15,7 @@ performance by more than half in some cases. With AugMix, we obtain
 state-of-the-art on ImageNet-C, ImageNet-P and in uncertainty estimation when
 the train and test distribution do not match.
 
-For more details please see our ICLR 2020
-[full paper](https://arxiv.org/pdf/1912.02781.pdf).
+For more details please see our [ICLR 2020 paper](https://arxiv.org/pdf/1912.02781.pdf).
 
 ## Pseudocode
 
@@ -102,7 +101,7 @@ If you find this useful for your work, please consider citing
 @article{hendrycks2020augmix,
   title={{AugMix}: A Simple Data Processing Method to Improve Robustness and Uncertainty},
   author={Hendrycks, Dan and Mu, Norman and Cubuk, Ekin D. and Zoph, Barret and Gilmer, Justin and Lakshminarayanan, Balaji},
-  journal={ICLR},
+  journal={Proceedings of the International Conference on Learning Representations (ICLR)},
   year={2020}
 }
 ```
