@@ -98,10 +98,12 @@ This model was measured at 66.2 mCE and 77.06% top-1 accuracy.
 If you find this useful for your work, please consider citing
 
 ```
-@article{hendrycks2020augmix,
-  title={{AugMix}: A Simple Data Processing Method to Improve Robustness and Uncertainty},
-  author={Hendrycks, Dan and Mu, Norman and Cubuk, Ekin D. and Zoph, Barret and Gilmer, Justin and Lakshminarayanan, Balaji},
-  journal={Proceedings of the International Conference on Learning Representations (ICLR)},
-  year={2020}
+@inproceedings{
+  hendrycks*2020augmix,
+  title={AugMix: A Simple Method to Improve Robustness and Uncertainty under Data Shift},
+  author={Dan Hendrycks* and Norman Mu* and Ekin Dogus Cubuk and Barret Zoph and Justin Gilmer and Balaji Lakshminarayanan},
+  booktitle={International Conference on Learning Representations},
+  year={2020},
+  url={https://openreview.net/forum?id=S1gmrxHFvB}
 }
 ```
