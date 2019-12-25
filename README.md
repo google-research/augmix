@@ -88,22 +88,20 @@ ResNet-50: `python imagenet.py <path/to/imagenet> <path/to/imagenet-c>`
 
 ## Pretrained weights
 
-Pretrained weights for ResNet-50 trained with AugMix on ImageNet are available
-[here](https://drive.google.com/file/d/1CeguHRKednBToq2Ai_cY73jXPbXCIY7v/view?usp=sharing).
+Weights for a ResNet-50 ImageNet classifier trained with AugMix for 180 epochs are available
+[here](https://drive.google.com/file/d/1z-1V3rdFiwqSECz7Wkmn4VJVefJGJGiF/view?usp=sharing).
 
-This model was measured at 66.2 mCE and 77.06% top-1 accuracy.
+This model has a 65.3 mean Corruption Error (mCE) and a 77.53% top-1 accuracy on clean ImageNet data.
 
 ## Citation
 
 If you find this useful for your work, please consider citing
 
 ```
-@inproceedings{
-  hendrycks*2020augmix,
-  title={AugMix: A Simple Method to Improve Robustness and Uncertainty under Data Shift},
-  author={Dan Hendrycks* and Norman Mu* and Ekin Dogus Cubuk and Barret Zoph and Justin Gilmer and Balaji Lakshminarayanan},
-  booktitle={International Conference on Learning Representations},
-  year={2020},
-  url={https://openreview.net/forum?id=S1gmrxHFvB}
+@article{hendrycks2020augmix,
+  title={{AugMix}: A Simple Data Processing Method to Improve Robustness and Uncertainty},
+  author={Hendrycks, Dan and Mu, Norman and Cubuk, Ekin D. and Zoph, Barret and Gilmer, Justin and Lakshminarayanan, Balaji},
+  journal={Proceedings of the International Conference on Learning Representations (ICLR)},
+  year={2020}
 }
 ```
