@@ -91,7 +91,7 @@ parser.add_argument(
     help='Severity of base augmentation operators')
 parser.add_argument(
     '--aug-prob-coeff',
-    default=0.1,
+    default=1.,
     type=float,
     help='Probability distribution coefficients')
 parser.add_argument(
