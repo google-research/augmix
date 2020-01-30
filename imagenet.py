@@ -218,7 +218,7 @@ def aug(image, preprocess):
     depth = args.mixture_depth if args.mixture_depth > 0 else np.random.randint(
         1, 4)
     for _ in range(depth):
-      op = np.random.choice(augmentations.augmentations)
+      op = np.random.choice(aug_list)
       image_aug = op(image_aug, args.aug_severity)
     # Preprocessing commutes since all coefficients are convex
     mix += ws[i] * preprocess(image_aug)
