@@ -15,8 +15,7 @@
 """Base augmentations operators."""
 
 import numpy as np
-from PIL import Image
-from PIL import ImageOps
+from PIL import Image, ImageOps, ImageEnhance
 
 # ImageNet code should change this value
 IMAGE_SIZE = 32
@@ -115,7 +114,36 @@ def translate_y(pil_img, level):
                            resample=Image.BILINEAR)
 
 
+# operation that overlaps with ImageNet-C's test set
+def color(pil_img, level):
+    level = float_parameter(sample_level(level), 1.8)
+    return ImageEnhance.Color(pil_img).enhance(level)
+
+
+# operation that overlaps with ImageNet-C's test set
+def contrast(pil_img, level):
+    level = float_parameter(sample_level(level), 1.8)
+    return ImageEnhance.Contrast(pil_img).enhance(level)
+
+
+# operation that overlaps with ImageNet-C's test set
+def brightness(pil_img, level):
+    level = float_parameter(sample_level(level), 1.8)
+    return ImageEnhance.Brightness(pil_img).enhance(level)
+
+
+# operation that overlaps with ImageNet-C's test set
+def sharpness(pil_img, level):
+    level = float_parameter(sample_level(level), 1.8)
+    return ImageEnhance.Sharpness(pil_img).enhance(level)
+
+
 augmentations = [
     autocontrast, equalize, posterize, rotate, solarize, shear_x, shear_y,
     translate_x, translate_y
+]
+
+augmentations_all = [
+    autocontrast, equalize, posterize, rotate, solarize, shear_x, shear_y,
+    translate_x, translate_y, color, contrast, brightness, sharpness
 ]

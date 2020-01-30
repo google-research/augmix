@@ -99,6 +99,11 @@ parser.add_argument(
     '-nj',
     action='store_true',
     help='Turn off JSD consistency loss.')
+parser.add_argument(
+    '--all-ops',
+    '-all',
+    action='store_true',
+    help='Turn on all operations (+brightness,contrast,color,sharpness).')
 # Checkpointing options
 parser.add_argument(
     '--save',
@@ -199,6 +204,10 @@ def aug(image, preprocess):
   Returns:
     mixed: Augmented and mixed image.
   """
+  aug_list = augmentations.augmentations
+  if args.all_ops:
+    aug_list = augmentations.augmentations_all
+
   ws = np.float32(
       np.random.dirichlet([args.aug_prob_coeff] * args.mixture_width))
   m = np.float32(np.random.beta(args.aug_prob_coeff, args.aug_prob_coeff))

@@ -102,6 +102,11 @@ parser.add_argument(
     '-nj',
     action='store_true',
     help='Turn off JSD consistency loss.')
+parser.add_argument(
+    '--all-ops',
+    '-all',
+    action='store_true',
+    help='Turn on all operations (+brightness,contrast,color,sharpness).')
 # Checkpointing options
 parser.add_argument(
     '--save',
@@ -154,6 +159,10 @@ def aug(image, preprocess):
   Returns:
     mixed: Augmented and mixed image.
   """
+  aug_list = augmentations.augmentations
+  if args.all_ops:
+    aug_list = augmentations.augmentations_all
+
   ws = np.float32(np.random.dirichlet([1] * args.mixture_width))
   m = np.float32(np.random.beta(1, 1))
 
@@ -163,7 +172,7 @@ def aug(image, preprocess):
     depth = args.mixture_depth if args.mixture_depth > 0 else np.random.randint(
         1, 4)
     for _ in range(depth):
-      op = np.random.choice(augmentations.augmentations)
+      op = np.random.choice(aug_list)
       image_aug = op(image_aug, args.aug_severity)
     # Preprocessing commutes since all coefficients are convex
     mix += ws[i] * preprocess(image_aug)
@@ -229,7 +238,7 @@ def train(net, train_loader, optimizer, scheduler):
     loss.backward()
     optimizer.step()
     scheduler.step()
-    loss_ema = loss_ema * 0.1 + float(loss) * 0.9
+    loss_ema = loss_ema * 0.9 + float(loss) * 0.1
     if i % args.print_freq == 0:
       print('Train Loss {:.3f}'.format(loss_ema))
 
