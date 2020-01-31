@@ -116,25 +116,25 @@ def translate_y(pil_img, level):
 
 # operation that overlaps with ImageNet-C's test set
 def color(pil_img, level):
-    level = float_parameter(sample_level(level), 1.8)
+    level = float_parameter(sample_level(level), 1.8) + 0.1
     return ImageEnhance.Color(pil_img).enhance(level)
 
 
 # operation that overlaps with ImageNet-C's test set
 def contrast(pil_img, level):
-    level = float_parameter(sample_level(level), 1.8)
+    level = float_parameter(sample_level(level), 1.8) + 0.1
     return ImageEnhance.Contrast(pil_img).enhance(level)
 
 
 # operation that overlaps with ImageNet-C's test set
 def brightness(pil_img, level):
-    level = float_parameter(sample_level(level), 1.8)
+    level = float_parameter(sample_level(level), 1.8) + 0.1
     return ImageEnhance.Brightness(pil_img).enhance(level)
 
 
 # operation that overlaps with ImageNet-C's test set
 def sharpness(pil_img, level):
-    level = float_parameter(sample_level(level), 1.8)
+    level = float_parameter(sample_level(level), 1.8) + 0.1
     return ImageEnhance.Sharpness(pil_img).enhance(level)
 
 
