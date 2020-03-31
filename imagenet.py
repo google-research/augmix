@@ -481,12 +481,16 @@ def main():
         'Epoch {:3d} | Train Loss {:.4f} | Test Loss {:.3f} | Test Acc1 '
         '{:.2f}'
         .format((epoch + 1), train_loss_ema, test_loss, 100. * test_acc1))
+  
+  print('[!] The best model is loaded for testing')
+  best_checkpoint = torch.load(os.path.join(args.save, 'model_best.pth.tar'))
+  net.load_state_dict(best_checkpoint['state_dict'])
+  
+  corruption_accs = test_c(net, test_transform)
+  for c in CORRUPTIONS:
+    print('\t'.join(map(str, [c] + corruption_accs[c])))
 
-    corruption_accs = test_c(net, test_transform)
-    for c in CORRUPTIONS:
-      print('\t'.join(map(str, [c] + corruption_accs[c])))
-
-    print('mCE (normalized by AlexNet):', compute_mce(corruption_accs))
+  print('mCE (normalized by AlexNet):', compute_mce(corruption_accs))
 
 
 if __name__ == '__main__':
