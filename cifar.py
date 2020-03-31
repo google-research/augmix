@@ -427,7 +427,11 @@ def main():
         ' Test Error {4:.2f}'
         .format((epoch + 1), int(time.time() - begin_time), train_loss_ema,
                 test_loss, 100 - 100. * test_acc))
-
+    
+  print('[!] The best model is loaded for testing')
+  best_checkpoint = torch.load(os.path.join(args.save, 'model_best.pth.tar'))
+  net.load_state_dict(best_checkpoint['state_dict'])
+  
   test_c_acc = test_c(net, test_data, base_c_path)
   print('Mean Corruption Error: {:.3f}'.format(100 - 100. * test_c_acc))
 
