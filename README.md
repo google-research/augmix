@@ -74,6 +74,8 @@ training and evaluation on CIFAR-10/100-C and ImageNet-C.
 
 ## Usage
 
+The Jensen-Shannon Divergence loss term may be disabled for faster training at the cost of slightly lower performance by adding the flag `--no-jsd`.
+
 Training recipes used in our paper:
 
 WRN: `python cifar.py`
