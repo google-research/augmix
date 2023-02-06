@@ -1,9 +1,8 @@
 # AugMix - Refactored
 
-This is a refactored version of the AugMix - Repository, to show some 
-proper refactoring techniques. Also [poetry](https://python-poetry.org/)
-is used for package managing as well es utilities to run the code on a 
-computing cluster.
+This is a refactored version of the AugMix - Repository, to show some refactoring techniques for educational purposes. 
+Also [poetry](https://python-poetry.org/) utils are added for package management 
+as well es utilities to run the code on a GPU computing cluster.
 
 The original Readme starts below:
 
