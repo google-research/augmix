@@ -13,7 +13,7 @@
 # limitations under the License.
 # ==============================================================================
 """Reference implementation of AugMix's data augmentation method in numpy."""
-import augmentations
+import __augmentations
 import numpy as np
 from PIL import Image
 
@@ -60,7 +60,7 @@ def augment_and_mix(image, severity=3, width=3, depth=-1, alpha=1.):
     image_aug = image.copy()
     d = depth if depth > 0 else np.random.randint(1, 4)
     for _ in range(d):
-      op = np.random.choice(augmentations.augmentations)
+      op = np.random.choice(__augmentations.augmentations)
       image_aug = apply_op(image_aug, op, severity)
     # Preprocessing commutes since all coefficients are convex
     mix += ws[i] * normalize(image_aug)

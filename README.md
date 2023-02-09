@@ -4,6 +4,11 @@ This is a refactored version of the AugMix - Repository, to show some refactorin
 Also [poetry](https://python-poetry.org/) utils are added for package management 
 as well es utilities to run the code on a GPU computing cluster.
 
+Currently only the project is only tested with the cifar dataset.
+
+Not all recommendations and guidelines are changed everywhere (as of limited time until now) so the project is needing further refactorings to become an optimal example.
+
+
 The original Readme starts below:
 
 

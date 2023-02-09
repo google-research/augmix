@@ -26,7 +26,7 @@ import os
 import shutil
 import time
 
-import augmentations
+import __augmentations
 
 import numpy as np
 import torch
@@ -36,7 +36,7 @@ from torchvision import datasets
 from torchvision import models
 from torchvision import transforms
 
-augmentations.IMAGE_SIZE = 224
+__augmentations.IMAGE_SIZE = 224
 
 model_names = sorted(name for name in models.__dict__
                      if name.islower() and not name.startswith('__') and
@@ -204,9 +204,9 @@ def aug(image, preprocess):
   Returns:
     mixed: Augmented and mixed image.
   """
-  aug_list = augmentations.augmentations
+  aug_list = __augmentations.augmentations
   if args.all_ops:
-    aug_list = augmentations.augmentations_all
+    aug_list = __augmentations.augmentations_all
 
   ws = np.float32(
       np.random.dirichlet([args.aug_prob_coeff] * args.mixture_width))
