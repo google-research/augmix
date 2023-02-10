@@ -8,7 +8,22 @@ Currently only the project is only tested with the cifar dataset.
 
 Not all recommendations and guidelines are changed everywhere (as of limited time until now) so the project is needing further refactorings to become an optimal example.
 
-poetry
+## SETUP 
+1. Setup poetry, first cd to the repo directory
+```
+poetry env use <path/to/python>
+poetry shell
+poetry install
+```
+
+2. Install torch from https://pytorch.org/get-started/locally/ (can also use:)
+```
+pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
+```
+
+## SLURM commands
+1. submitting a job to the OMNI cluster:
+ a. create a bash file
 
 
 The original Readme starts below:
