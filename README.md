@@ -8,6 +8,8 @@ Currently only the project is only tested with the cifar dataset.
 
 Not all recommendations and guidelines are changed everywhere (as of limited time until now) so the project is needing further refactorings to become an optimal example.
 
+poetry
+
 
 The original Readme starts below:
 
