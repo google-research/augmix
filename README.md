@@ -16,10 +16,13 @@ poetry shell
 poetry install
 ```
 
-2. Install torch from https://pytorch.org/get-started/locally/ (can also use:)
+2. Install [torch](https://pytorch.org/get-started/locally/) (can also use:)
 ```
 pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
 ```
+
+## Using [Hydra](https://hydra.cc/docs/intro/)
+[Hydra](https://hydra.cc/docs/intro/) is a framework that simplifies development.
 
 ## SLURM commands
 1. submitting a job to the OMNI cluster:
