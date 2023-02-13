@@ -21,12 +21,44 @@ poetry install
 pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
 ```
 
+3. Install [tqdm](https://tqdm.github.io/)~(for progress bar) and [ipdb](https://wangchuan.github.io/coding/2017/07/12/ipdb-cheat-sheet.html)~(for debugging):
+```
+pip install tqdm
+pip install ipdb
+```
+
 ## Using [Hydra](https://hydra.cc/docs/intro/)
-[Hydra](https://hydra.cc/docs/intro/) is a framework that simplifies development.
+* [Hydra](https://hydra.cc/docs/intro/) is a framework that simplifies development.
+* We did not include it in this package, however one can do so and then use cool commands instead of 'python cifar.py' etc and make the repository much more moduler.
 
 ## SLURM commands
-1. submitting a job to the OMNI cluster:
- a. create a bash file
+1. Submitting a job to the OMNI cluster:
+
+ a. create a bash file, example in job_scripts/different_networks.sh
+
+ b. sbatch job_scripts/different_networks.sh
+
+
+2. Monitoring submitted jobs:
+ 
+ a. monitoring particular job : squeue -j job_id 
+
+ b. monitoring all jobs by user: squeue -u user_id
+
+ c. monitoring progress every second: watch -n 1 squeue -u user_id
+
+ d. monitoring jobs on a partition : squeue -p gpu
+
+
+3. Getting information about a job: scontrol show JOB=job_id
+
+
+4. Re-arranging jobs by changing NICE:  scontrol update JOB=job_id NICE=integer.
+   *  Higher number leads to less priority and lower number leads to higher priority. Default NICE=0
+
+
+5. Finding out job efficiency: seff -j job_id
+
 
 
 The original Readme starts below:

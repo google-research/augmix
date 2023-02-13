@@ -9,7 +9,8 @@ def train(net, train_loader, optimizer, scheduler, config: Config, logging, epoc
     """Train for one epoch."""
     net.train()
     loss_ema = 0.
-    with tqdm(train_loader, unit="batch") as tepoch:
+    iter = 0
+    with tqdm(train_loader, unit="batch", disable=config.disable_tqdm) as tepoch:
         for images, targets in tepoch:
         #for i, (images, targets) in enumerate(train_loader):
             optimizer.zero_grad()
@@ -47,7 +48,8 @@ def train(net, train_loader, optimizer, scheduler, config: Config, logging, epoc
             loss_ema = loss_ema * 0.9 + float(loss) * 0.1
             tepoch.set_description(f"Epoch {epoch}")
             tepoch.set_postfix(train_loss=loss_ema)
-            #if i % config.print_freq == 0:
-            #    logging.info('Train Loss {:.3f}'.format(loss_ema))
+            if config.disable_tqdm and iter % config.print_freq == 0:
+                logging.info('Train Loss {:.3f}'.format(loss_ema))
+            iter +=1
 
     return loss_ema

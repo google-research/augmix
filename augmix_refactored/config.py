@@ -75,3 +75,6 @@ class Config(ArgparserMixin, SimpleYamlMixin):
 
     image_size: int = 32
     """Image size for images in the dataset."""
+
+    disable_tqdm: bool = False
+    """When using TQDM with slurm, the slurm.err file has a progress bar for every single increment. Thus progress bar can be turned off if need be."""
